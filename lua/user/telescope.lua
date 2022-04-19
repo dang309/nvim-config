@@ -7,6 +7,12 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    previewer = true,
+    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+	  grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+	  qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+
+    layout_strategy="flex",
 
     prompt_prefix = " ",
     selection_caret = " ",
@@ -85,6 +91,7 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+
   },
   extensions = {
     -- Your extension configuration goes here:
